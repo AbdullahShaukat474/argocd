@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
  name: mysqlpwd
+ namespace: default
 data:
  password: b2N0b2JlcmZlc3Q=
 
@@ -11,6 +12,7 @@ apiVersion: v1
 kind: Service
 metadata:
  name: todo-mysql
+ namespace: default
  labels:
    app: todo-mysql
 spec:
@@ -27,6 +29,7 @@ spec:
 kind: StatefulSet
 metadata:
  name: todo-mysql
+ namespace: default
 spec:
  selector:
    matchLabels:
